@@ -1,6 +1,6 @@
 # Note_Taker
 
-Note taker utilizing express.js to allow user to write and save notes. This application uses an Express.js back end and saves and retrieves note data from a JSON file.
+This application is a note taker utilizing express.js to allow a user to write and save notes. This application uses an Express.js back end and saves and retrieves note data from a JSON file.
 
 ## User Story
 
@@ -9,7 +9,6 @@ AS A small business owner
 I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
-
 
 ## Acceptance Criteria
 
@@ -29,10 +28,9 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
-
 ## Mock-Up
 
-The following images show the web application's appearance and functionality: 
+The following images show the web application's appearance and functionality:
 
 ![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo-01.png)
 
@@ -52,7 +50,7 @@ The following API routes were created:
 
 * `GET /api/notes` reads the `db.json` file and returns all saved notes as JSON.
 
-* `POST /api/notes` receives a new note to save on the request body, adds it to the `db.json` file, and then returns the new note to the client. 
+* `POST /api/notes` receives a new note to save on the request body, adds it to the `db.json` file, and then returns the new note to the client.
 
 ## Development Process
 
@@ -80,8 +78,7 @@ The challenges faced in the project development process was getting the notes.ht
 
 ![dirname](./Assets/dirname.png)
 
-Another challenge that was faced was getting the delete and edit buttons to work properly for each of the pre-existing notes that had been saved. When these buttons were clicked, nothing would happen and the notes would stay where they were. 
-
+Another challenge that was faced was getting the delete and edit buttons to work properly for each of the pre-existing notes that had been saved. When these buttons were clicked, nothing would happen and the notes would stay where they were.
 
 ## Credits
 
@@ -94,4 +91,3 @@ Express - [Express](https://www.npmjs.com/package/express)
 GitHub Repository - [Team Profile Generator Repository](https://github.com/ktrudickm/Note_Taker "Note Taker Repository")
 
 Deployed Project - [Deployed Application](https://ktrudickm.github.io/Note_Taker/ "Deployed Application")
-
