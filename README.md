@@ -58,19 +58,9 @@ To start, we needed to set up the dependencies, express configuration, the route
 
 ![setup](./Assets/setup.png)
 
-We then created separate js files for the specific routes, API and HTML routes specifically:
+We then created separate js files for the specific routes, API and HTML routes specifically. Both of these files utilize app.get, and the API Route specifically uses app.post to actually post the json formatted notes onto the page. In the HTML Route file, the app.get handles when the user visits each respective page, index and notes, and displays a page with the appropritate content.
 
-![API Route](./Assets/route1.png)
-
-![HTML Route](./Assets/htmlroute.png)
-
-Both of these files utilize app.get, and the API Route specifically uses app.post to actually post the json formatted notes onto the page. In the HTML Route file, the app.get handles when the user visits each respective page, index and notes, and displays a page with the appropritate content.
-
-Then, in the data folder, we created a file called notesData which holds the specific array of all the entered notes to be used to push all future entered notes:
-
-![Notes Data](./Assets/noteData.png)
-
-The API Routes file requires the noteData file to handle connecting the two files to store the actual notes data.
+The API Routes file requires the db.json file to handle connecting the two files to store the actual notes data.
 
 ## Challenges
 

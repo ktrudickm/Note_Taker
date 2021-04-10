@@ -1,17 +1,40 @@
-  
-const noteData = require('../data/notesData');
 
-module.exports = (app) => {
+const fs = require('fs');
+const path = require('path');
 
-    app.get('/api/notes', (req, res) => res.json(noteData));
+module.exports = app => {
 
-    app.post('/api/notes', (req, res) => {
-        noteData.push(req.body);
-    });
+    app.get("/api/notes", (req, res) => {
+        const notes = fs.readFileSync('./db/db.json', 'utf-8')
+        console.log(notes)
+    })
 
-    app.post('/api/clear', (req, res) => {
-        noteData.length = 0;
+    fs.readFile("./db/db.json","utf8", (err, data) => {
 
-        res.json({ ok: true });
-    });
-};
+        if (err) throw err;
+
+        var noteList = JSON.parse(data);
+
+        app.get("/api/notes", function(req, res) {
+            res.json(noteList);
+        });
+
+        app.post("/api/notes", function(req, res) {
+            let note = req.body;
+            noteList.push(note);
+            handleUpdate();
+        });
+
+        app.get("/api/notes/:id", function(req,res) {
+            res.json(noteList[req.params.id]);
+        });
+
+        function handleUpdate() {
+            fs.writeFile("./db/db.json",JSON.stringify(noteList,'\t'),err => {
+                if (err) throw err;
+                return true;
+            });
+        }
+      });
+    }
+
