@@ -1,13 +1,10 @@
-
+const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
+
 module.exports = app => {
 
-    app.get("/api/notes", (req, res) => {
-        const notes = fs.readFileSync('./db/db.json', 'utf-8')
-        console.log(notes)
-    })
 
     fs.readFile("./db/db.json","utf8", (err, data) => {
 
@@ -20,9 +17,10 @@ module.exports = app => {
         });
 
         app.post("/api/notes", function(req, res) {
-            let note = req.body;
-            noteList.push(note);
+            let noteNew = req.body;
+            noteList.push(noteNew);
             handleUpdate();
+            res.json(noteNew);
         });
 
         app.get("/api/notes/:id", function(req,res) {

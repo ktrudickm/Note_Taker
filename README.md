@@ -58,7 +58,13 @@ To start, we needed to set up the dependencies, express configuration, the route
 
 ![setup](./Assets/setup.png)
 
-We then created separate js files for the specific routes, API and HTML routes specifically. Both of these files utilize app.get, and the API Route specifically uses app.post to actually post the json formatted notes onto the page. In the HTML Route file, the app.get handles when the user visits each respective page, index and notes, and displays a page with the appropritate content.
+We then created separate js files for the specific routes, API and HTML routes specifically. Both of these files utilize app.get, and the API Route specifically uses app.post to actually post the json formatted notes onto the page:
+
+![apiroute](./Assets/apiroute.png)
+
+In the HTML Route file, the app.get handles when the user visits each respective page, index and notes, and displays a page with the appropritate content:
+
+![htmlroute](./Assets/htmlroute.png)
 
 The API Routes file requires the db.json file to handle connecting the two files to store the actual notes data.
 
@@ -68,7 +74,7 @@ The challenges faced in the project development process was getting the notes.ht
 
 ![dirname](./Assets/dirname.png)
 
-Another challenge that was faced was getting the delete and edit buttons to work properly for each of the pre-existing notes that had been saved. When these buttons were clicked, nothing would happen and the notes would stay where they were.
+Another challenge that was faced was getting the delete and edit buttons to work properly for each of the pre-existing notes that had been saved. When these buttons were clicked, nothing would happen and the notes would stay where they were. This was resolved by parsing the JSON.
 
 ## Credits
 
@@ -80,4 +86,3 @@ Express - [Express](https://www.npmjs.com/package/express)
 
 GitHub Repository - [Team Profile Generator Repository](https://github.com/ktrudickm/Note_Taker "Note Taker Repository")
 
-Deployed Project - [Deployed Application](https://ktrudickm.github.io/Note_Taker/ "Deployed Application")
